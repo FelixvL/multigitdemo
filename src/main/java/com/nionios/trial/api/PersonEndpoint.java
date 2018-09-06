@@ -26,15 +26,15 @@ public class PersonEndpoint {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listGroep(){
-        Iterable <Person> persons = personService.findAll();
+    public Response listGroep() {
+        Iterable<Person> persons = personService.findAll();
         return Response.ok(persons).build();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response postPerson(Person person){
+    public Response postPerson(Person person) {
         Person result = personService.save(person);
         return Response.accepted(result.getId()).build();
     }
